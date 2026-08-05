@@ -1,5 +1,5 @@
 {
-  "name": "api-showcase_1",
+  "name": "api-showcase",
   "type": "app",
   "defaultPage": "home",
   "config": {
@@ -9,6 +9,12 @@
     },
     "properties": {
       "version": "1.0.0-SNAPSHOT"
+    },
+    "environments": [],
+    "themes": [],
+    "auth": {
+      "enabled": false,
+      "mockedUserAccounts": []
     }
   },
   "directories": {
