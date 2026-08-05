@@ -1,0 +1,91 @@
+{
+  "type": "custom-component",
+  "name": "fancy-results",
+  "description": "## Fancy Results\nDisplays a list of items with fancy styling.",
+  "children": [
+    {
+      "name": "div",
+      "classList": [
+        "fancy-container"
+      ],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "classList": [
+            "fancy-item"
+          ],
+          "iterate": {
+            "array": "$ctrl.items",
+            "variable": "item"
+          },
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "textContent": "item.name",
+              "evaluate": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": [],
+  "bindings": [
+    {
+      "name": "items",
+      "type": "<",
+      "default": "[]",
+      "description": "Array of items to display.",
+      "visibleWhen": "",
+      "label": "",
+      "group": "",
+      "example": "",
+      "actions": [],
+      "propertyType": "array",
+      "enumOptions": [],
+      "elementsProperties": []
+    }
+  ],
+  "modules": [],
+  "styles": [],
+  "directories": {
+    "assets": [],
+    "components": [],
+    "scripts": [
+      {
+        "id": "apbc7lE1Vzbh6H9knyI76",
+        "name": "dir"
+      }
+    ],
+    "stylesheets": [
+      {
+        "id": "Z0kYoSb_juD6zeHKqtKTZ",
+        "name": "dir"
+      }
+    ]
+  },
+  "parentDirectoryId": "ZTSLAFhwfWT23A0OcHExj",
+  "localStylesheets": [
+    {
+      "path": "dir/fancy-results.css",
+      "parentDirectoryId": "Z0kYoSb_juD6zeHKqtKTZ"
+    }
+  ],
+  "localScripts": [
+    {
+      "path": "dir/fancy-results.js",
+      "parentDirectoryId": "apbc7lE1Vzbh6H9knyI76"
+    }
+  ]
+}

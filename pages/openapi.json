@@ -1,0 +1,429 @@
+{
+  "name": "openapi",
+  "type": "page",
+  "url": "/openapi",
+  "params": {},
+  "variables": [
+    {
+      "name": "$state",
+      "type": "service"
+    },
+    {
+      "name": "petstoreApi",
+      "type": "open-api",
+      "id": "open-api"
+    },
+    {
+      "name": "pets",
+      "description": "Stores the list of pets returned from the API.",
+      "type": "property",
+      "value": "[]"
+    },
+    {
+      "name": "isLoading",
+      "description": "Tracks the loading state of the API call.",
+      "type": "property",
+      "value": "false"
+    },
+    {
+      "name": "errorMessage",
+      "description": "Stores any error message encountered during the API call.",
+      "type": "property",
+      "value": "null"
+    },
+    {
+      "name": "loadPets",
+      "description": "Fetches available pets from the API and updates the state.",
+      "type": "method",
+      "body": "$ctrl.isLoading = true;\n$ctrl.errorMessage = null;\ntry {\n  const response = await $ctrl.petstoreApi.findPetsByStatus({ status: ['available'] });\n  $ctrl.pets = response.data || [];\n} catch (err) {\n  $ctrl.errorMessage = (err && err.data && err.data.message) || 'Failed to load pets.';\n  $ctrl.pets = [];\n} finally {\n  $ctrl.isLoading = false;\n}",
+      "invokeOnLoad": true,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    },
+    {
+      "name": "goHome",
+      "description": "Navigates back to the home page.",
+      "type": "method",
+      "body": "$ctrl.$state.go('home');",
+      "invokeOnLoad": false,
+      "isAsync": false,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    }
+  ],
+  "children": [
+    {
+      "name": "div",
+      "nodeName": "div",
+      "elementId": "",
+      "attributes": [
+        {
+          "property": "data-id",
+          "value": "XucjEm"
+        }
+      ],
+      "classList": [
+        "p-6"
+      ],
+      "conditionalClasses": [],
+      "conditionalStyles": [],
+      "contentType": "text",
+      "displayExpression": "",
+      "events": {},
+      "iterate": {
+        "array": "",
+        "variable": "",
+        "trackByIndex": false
+      },
+      "styles": [],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column",
+          "crossAxisAlignment": "stretch",
+          "gap": "1rem"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "QdFn0y"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            },
+            "container": {
+              "type": "box",
+              "orientation": "row",
+              "crossAxisAlignment": "center",
+              "gap": "1rem"
+            }
+          },
+          "children": [
+            {
+              "name": "Button",
+              "nodeName": "bln-button",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                },
+                {
+                  "property": "data-id",
+                  "value": "IKFyLv"
+                }
+              ],
+              "classList": [],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [],
+              "comments": "",
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "'Back to Home'",
+                  "to": "label"
+                },
+                {
+                  "expression": "'primary'",
+                  "to": "type"
+                },
+                {
+                  "expression": "({type: 'font-icon', style: 'solid', name: 'arrow-left', position: 'left'})",
+                  "to": "icon"
+                },
+                {
+                  "expression": "$ctrl.goHome()",
+                  "to": "onClick"
+                }
+              ]
+            },
+            {
+              "name": "h1",
+              "nodeName": "h1",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "data-id",
+                  "value": "Ccj_5L"
+                }
+              ],
+              "classList": [
+                "text-2xl",
+                "font-semibold"
+              ],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 1,
+                  "shrinkFactor": 1,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "nodeName": "text",
+                  "textContent": "'OpenAPI Showcase'",
+                  "evaluate": true
+                }
+              ],
+              "comments": ""
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "LXyHZD"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 1,
+              "shrinkFactor": 1,
+              "mainSize": "100%"
+            }
+          },
+          "children": [
+            {
+              "name": "Progress",
+              "nodeName": "bln-progress",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                },
+                {
+                  "property": "data-id",
+                  "value": "7YQVHG"
+                }
+              ],
+              "classList": [],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "$ctrl.isLoading",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "children": [],
+              "comments": "",
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "'infinite'",
+                  "to": "type"
+                },
+                {
+                  "expression": "'Loading available pets...'",
+                  "to": "message"
+                }
+              ]
+            },
+            {
+              "name": "div",
+              "nodeName": "div",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "data-id",
+                  "value": "Nil_8-"
+                }
+              ],
+              "classList": [
+                "p-4",
+                "rounded-md",
+                "bg-red-50",
+                "text-red-700"
+              ],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "$ctrl.errorMessage",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "children": [
+                {
+                  "name": "text",
+                  "nodeName": "text",
+                  "textContent": "$ctrl.errorMessage",
+                  "evaluate": true
+                }
+              ],
+              "comments": ""
+            },
+            {
+              "name": "div",
+              "nodeName": "div",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "data-id",
+                  "value": "qVtE5M"
+                }
+              ],
+              "classList": [
+                "p-8",
+                "text-center",
+                "text-slate-500"
+              ],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "!$ctrl.isLoading && !$ctrl.errorMessage && $ctrl.pets.length === 0",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "children": [
+                {
+                  "name": "text",
+                  "nodeName": "text",
+                  "textContent": "'No available pets found.'",
+                  "evaluate": true
+                }
+              ],
+              "comments": ""
+            },
+            {
+              "name": "Table",
+              "nodeName": "bln-table",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                },
+                {
+                  "property": "data-id",
+                  "value": "Ukk0Ij"
+                }
+              ],
+              "classList": [],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "!$ctrl.isLoading && !$ctrl.errorMessage && $ctrl.pets.length > 0",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "children": [],
+              "comments": "",
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "$ctrl.pets",
+                  "to": "data"
+                },
+                {
+                  "expression": "false",
+                  "to": "enableRowSelection"
+                },
+                {
+                  "expression": "[{name: 'ID', valueKey: 'id', width: '80'}, {name: 'Name', valueKey: 'name', width: '200'}, {name: 'Category', valueKey: 'category.name', width: '150'}, {name: 'Status', valueKey: 'status', width: '100'}]",
+                  "to": "columns"
+                }
+              ]
+            }
+          ],
+          "comments": ""
+        }
+      ],
+      "comments": ""
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "type": "app-service",
+  "name": "asia-countries-service",
+  "description": "## Asian Countries Service\nManages Asian countries data. Public API: `countries`, `isLoading`, `hasError`, `getAsiaCountries`.",
+  "singleton": true,
+  "variables": [
+    {
+      "name": "countriesApi",
+      "type": "graphql-api",
+      "id": "graphql-api"
+    },
+    {
+      "name": "countries",
+      "description": "List of fetched Asian countries.",
+      "type": "property",
+      "value": "[]"
+    },
+    {
+      "name": "isLoading",
+      "description": "Indicates if the API request is in progress.",
+      "type": "property",
+      "value": "false"
+    },
+    {
+      "name": "hasError",
+      "description": "Indicates if an error occurred during the fetch.",
+      "type": "property",
+      "value": "false"
+    },
+    {
+      "name": "getAsiaCountries",
+      "description": "Fetches the list of Asian countries from the GraphQL API.",
+      "type": "method",
+      "body": "this.isLoading = true;\nthis.hasError = false;\ntry {\n  const items = await this.countriesApi.query.countries({ filter: { continent: { eq: 'AS' } } }, { code: true, name: true, native: true, capital: true, emoji: true });\n  this.countries = items;\n} catch (err) {\n  this.hasError = true;\n} finally {\n  this.isLoading = false;\n}",
+      "invokeOnLoad": false,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    }
+  ],
+  "visible": [
+    "countries",
+    "isLoading",
+    "hasError",
+    "getAsiaCountries"
+  ]
+}

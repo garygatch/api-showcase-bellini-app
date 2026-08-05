@@ -1,0 +1,438 @@
+{
+  "name": "subcomp-page",
+  "type": "page",
+  "url": "/subcomp-page",
+  "params": {},
+  "variables": [
+    {
+      "name": "$state",
+      "type": "service"
+    },
+    {
+      "name": "countriesApi",
+      "type": "graphql-api",
+      "id": "graphql-api"
+    },
+    {
+      "name": "continents",
+      "description": "List of continents fetched from the GraphQL API.",
+      "type": "property",
+      "value": "[]"
+    },
+    {
+      "name": "isLoading",
+      "description": "Loading state flag.",
+      "type": "property",
+      "value": "false"
+    },
+    {
+      "name": "loadError",
+      "description": "Error message if the API fetch fails.",
+      "type": "property",
+      "value": "null"
+    },
+    {
+      "name": "loadContinents",
+      "description": "Fetches continents with their names and codes from the countriesApi.",
+      "type": "method",
+      "body": "$ctrl.isLoading = true;\n$ctrl.loadError = null;\ntry {\n  const items = await $ctrl.countriesApi.query.continents({}, { code: true, name: true });\n  $ctrl.continents = items;\n} catch (err) {\n  $ctrl.loadError = (err && err.message) || 'Failed to load continents.';\n} finally {\n  $ctrl.isLoading = false;\n}",
+      "invokeOnLoad": true,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    },
+    {
+      "name": "goHome",
+      "description": "Navigates back to the home page.",
+      "type": "method",
+      "body": "$ctrl.$state.go('home');",
+      "invokeOnLoad": false,
+      "isAsync": false,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    }
+  ],
+  "children": [
+    {
+      "name": "div",
+      "nodeName": "div",
+      "elementId": "",
+      "attributes": [
+        {
+          "property": "data-id",
+          "value": "m34F6c"
+        }
+      ],
+      "classList": [
+        "p-8",
+        "max-w-4xl",
+        "mx-auto"
+      ],
+      "conditionalClasses": [],
+      "conditionalStyles": [],
+      "contentType": "text",
+      "displayExpression": "",
+      "events": {},
+      "iterate": {
+        "array": "",
+        "variable": "",
+        "trackByIndex": false
+      },
+      "styles": [],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column",
+          "crossAxisAlignment": "stretch",
+          "gap": "1.5rem"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "H_dscW"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            },
+            "container": {
+              "type": "box",
+              "orientation": "row",
+              "mainAxisAlignment": "space-between",
+              "crossAxisAlignment": "center"
+            }
+          },
+          "children": [
+            {
+              "name": "h1",
+              "nodeName": "h1",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "data-id",
+                  "value": "vOKh-G"
+                }
+              ],
+              "classList": [
+                "text-2xl",
+                "font-semibold",
+                "text-gray-900"
+              ],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 1,
+                  "shrinkFactor": 1,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "nodeName": "text",
+                  "textContent": "Continents",
+                  "evaluate": false
+                }
+              ],
+              "comments": ""
+            },
+            {
+              "name": "Button",
+              "nodeName": "bln-button",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                },
+                {
+                  "property": "data-id",
+                  "value": "UWcJGC"
+                }
+              ],
+              "classList": [],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [],
+              "comments": "Ensure distinct primary style for Back to Home",
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "'Back to Home'",
+                  "to": "label"
+                },
+                {
+                  "expression": "'primary'",
+                  "to": "type"
+                },
+                {
+                  "expression": "$ctrl.goHome()",
+                  "to": "onClick"
+                }
+              ]
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "x8XnUc"
+            }
+          ],
+          "classList": [
+            "text-gray-500",
+            "py-8",
+            "text-center"
+          ],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "$ctrl.isLoading",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "nodeName": "text",
+              "textContent": "Loading continents...",
+              "evaluate": false
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "FKJUXL"
+            }
+          ],
+          "classList": [
+            "text-red-600",
+            "bg-red-50",
+            "p-4",
+            "rounded"
+          ],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "$ctrl.loadError",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "nodeName": "text",
+              "textContent": "$ctrl.loadError",
+              "evaluate": true
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "DbCJbA"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "!$ctrl.isLoading && !$ctrl.loadError && $ctrl.continents.length > 0",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 1,
+              "shrinkFactor": 1,
+              "mainSize": "auto"
+            }
+          },
+          "children": [
+            {
+              "name": "fancy-results",
+              "nodeName": "fancy-results",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "data-id",
+                  "value": "fJuWOy"
+                }
+              ],
+              "classList": [],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "children": [],
+              "comments": "",
+              "type": "custom-component",
+              "ownerId": "6a72bab4a2bd2cd4d596803d",
+              "ownerType": "app",
+              "expressions": [
+                {
+                  "expression": "$ctrl.continents",
+                  "to": "items"
+                }
+              ]
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "XQIQGY"
+            }
+          ],
+          "classList": [
+            "text-gray-500",
+            "text-center",
+            "py-8"
+          ],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "!$ctrl.isLoading && !$ctrl.loadError && $ctrl.continents.length === 0",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 0,
+              "mainSize": "auto"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "nodeName": "text",
+              "textContent": "No continents found.",
+              "evaluate": false
+            }
+          ],
+          "comments": ""
+        }
+      ],
+      "comments": ""
+    }
+  ]
+}

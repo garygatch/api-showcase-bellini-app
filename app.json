@@ -1,0 +1,67 @@
+{
+  "name": "api-showcase",
+  "type": "app",
+  "defaultPage": "home",
+  "config": {
+    "config": {
+      "parameters": [],
+      "script": ""
+    },
+    "modules": [],
+    "properties": {
+      "version": "1.0.0-SNAPSHOT"
+    },
+    "environments": [],
+    "themes": [],
+    "auth": {
+      "enabled": false,
+      "mockedUserAccounts": []
+    }
+  },
+  "directories": {
+    "assets": [],
+    "components": [
+      {
+        "id": "ZTSLAFhwfWT23A0OcHExj",
+        "name": "dir"
+      }
+    ],
+    "pages": [
+      {
+        "id": "AHWEa_AtWO5uohoAg_ee2",
+        "name": "dir"
+      }
+    ],
+    "scripts": [
+      {
+        "id": "cOuoTOs1g45n6S5uhRJaO",
+        "name": "dir"
+      }
+    ],
+    "services": [],
+    "stylesheets": [
+      {
+        "id": "um5rW6fUrLccU4onRdLjv",
+        "name": "dir"
+      }
+    ]
+  },
+  "localStylesheets": [
+    {
+      "path": "dir/main.css",
+      "parentDirectoryId": "um5rW6fUrLccU4onRdLjv"
+    },
+    {
+      "path": "asia.css"
+    }
+  ],
+  "localScripts": [
+    {
+      "path": "dir/main.js",
+      "parentDirectoryId": "cOuoTOs1g45n6S5uhRJaO"
+    },
+    {
+      "path": "asia.js"
+    }
+  ]
+}

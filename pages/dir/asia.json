@@ -1,0 +1,617 @@
+{
+  "name": "asia",
+  "type": "page",
+  "url": "/dir/asia",
+  "params": {},
+  "variables": [
+    {
+      "name": "$state",
+      "type": "service"
+    },
+    {
+      "name": "asiaCountriesService",
+      "type": "service",
+      "id": "service"
+    },
+    {
+      "name": "loadCountries",
+      "description": "Calls the injected service to fetch the list of Asian countries on page load.",
+      "type": "method",
+      "body": "await $ctrl.asiaCountriesService.getAsiaCountries();",
+      "invokeOnLoad": true,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    },
+    {
+      "name": "goHome",
+      "description": "Programmatically navigates the user back to the home page.",
+      "type": "method",
+      "body": "$ctrl.$state.go('home');",
+      "invokeOnLoad": false,
+      "isAsync": false,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    }
+  ],
+  "children": [
+    {
+      "name": "div",
+      "nodeName": "div",
+      "elementId": "",
+      "attributes": [
+        {
+          "property": "data-id",
+          "value": "7GULa_"
+        }
+      ],
+      "classList": [
+        "asia-page-container"
+      ],
+      "conditionalClasses": [],
+      "conditionalStyles": [],
+      "contentType": "text",
+      "displayExpression": "",
+      "events": {},
+      "iterate": {
+        "array": "",
+        "variable": "",
+        "trackByIndex": false
+      },
+      "styles": [],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column",
+          "gap": "2rem"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "ztDzQy"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            },
+            "container": {
+              "type": "box",
+              "orientation": "row",
+              "mainAxisAlignment": "space-between",
+              "crossAxisAlignment": "center"
+            }
+          },
+          "children": [
+            {
+              "name": "header",
+              "nodeName": "header",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "data-id",
+                  "value": "MMVq_e"
+                }
+              ],
+              "classList": [],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item"
+                }
+              },
+              "children": [
+                {
+                  "name": "h1",
+                  "nodeName": "h1",
+                  "elementId": "",
+                  "attributes": [
+                    {
+                      "property": "data-id",
+                      "value": "rJgf4Y"
+                    }
+                  ],
+                  "classList": [
+                    "asia-title",
+                    "text-3xl",
+                    "font-bold"
+                  ],
+                  "conditionalClasses": [],
+                  "conditionalStyles": [],
+                  "contentType": "text",
+                  "displayExpression": "",
+                  "events": {},
+                  "iterate": {
+                    "array": "",
+                    "variable": "",
+                    "trackByIndex": false
+                  },
+                  "styles": [],
+                  "children": [
+                    {
+                      "name": "text",
+                      "nodeName": "text",
+                      "textContent": "Asian Countries",
+                      "evaluate": false
+                    }
+                  ],
+                  "comments": ""
+                }
+              ],
+              "comments": ""
+            },
+            {
+              "name": "Button",
+              "nodeName": "bln-button",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                },
+                {
+                  "property": "data-id",
+                  "value": "WnViCA"
+                }
+              ],
+              "classList": [],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item"
+                }
+              },
+              "children": [],
+              "comments": "",
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "'Back to Home'",
+                  "to": "label"
+                },
+                {
+                  "expression": "'primary'",
+                  "to": "type"
+                },
+                {
+                  "expression": "({'type': 'font-icon', 'style': 'solid', 'name': 'arrow-left', 'position': 'left'})",
+                  "to": "icon"
+                },
+                {
+                  "expression": "$ctrl.goHome()",
+                  "to": "onClick"
+                }
+              ]
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "WgcEZr"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "$ctrl.asiaCountriesService.isLoading",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            },
+            "container": {
+              "type": "box",
+              "orientation": "row",
+              "mainAxisAlignment": "center"
+            }
+          },
+          "children": [
+            {
+              "name": "Spinner",
+              "nodeName": "bln-spinner",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                },
+                {
+                  "property": "data-id",
+                  "value": "j24P0y"
+                }
+              ],
+              "classList": [],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item"
+                }
+              },
+              "children": [],
+              "comments": "",
+              "type": "core-component",
+              "expressions": []
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "b3l4-X"
+            }
+          ],
+          "classList": [
+            "text-red-600",
+            "font-semibold",
+            "text-center"
+          ],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "$ctrl.asiaCountriesService.hasError",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "nodeName": "text",
+              "textContent": "Failed to load countries.",
+              "evaluate": false
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "CvO_Oy"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "!$ctrl.asiaCountriesService.isLoading && !$ctrl.asiaCountriesService.hasError",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 1,
+              "shrinkFactor": 1,
+              "mainSize": "auto"
+            },
+            "container": {
+              "type": "grid",
+              "columns": [
+                {
+                  "type": "span",
+                  "value": 1
+                },
+                {
+                  "type": "span",
+                  "value": 1
+                },
+                {
+                  "type": "span",
+                  "value": 1
+                },
+                {
+                  "type": "span",
+                  "value": 1
+                }
+              ],
+              "rows": [
+                {
+                  "type": "other",
+                  "value": "auto"
+                }
+              ],
+              "columnGap": "1.5rem",
+              "rowGap": "1.5rem"
+            }
+          },
+          "children": [
+            {
+              "name": "div",
+              "nodeName": "div",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "data-id",
+                  "value": "o9Kf70"
+                }
+              ],
+              "classList": [
+                "asia-card",
+                "p-4",
+                "bg-white",
+                "rounded-lg",
+                "shadow",
+                "border",
+                "border-gray-100"
+              ],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "$ctrl.asiaCountriesService.countries",
+                "variable": "country",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "grid-item"
+                },
+                "container": {
+                  "type": "box",
+                  "orientation": "column",
+                  "gap": "0.5rem"
+                }
+              },
+              "children": [
+                {
+                  "name": "div",
+                  "nodeName": "div",
+                  "elementId": "",
+                  "attributes": [
+                    {
+                      "property": "data-id",
+                      "value": "LCtjVe"
+                    }
+                  ],
+                  "classList": [
+                    "text-5xl",
+                    "mb-2"
+                  ],
+                  "conditionalClasses": [],
+                  "conditionalStyles": [],
+                  "contentType": "text",
+                  "displayExpression": "",
+                  "events": {},
+                  "iterate": {
+                    "array": "",
+                    "variable": "",
+                    "trackByIndex": false
+                  },
+                  "styles": [],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item"
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "nodeName": "text",
+                      "textContent": "country.emoji || ''",
+                      "evaluate": true
+                    }
+                  ],
+                  "comments": ""
+                },
+                {
+                  "name": "h2",
+                  "nodeName": "h2",
+                  "elementId": "",
+                  "attributes": [
+                    {
+                      "property": "data-id",
+                      "value": "UYn2Xh"
+                    }
+                  ],
+                  "classList": [
+                    "text-xl",
+                    "font-bold",
+                    "text-gray-900"
+                  ],
+                  "conditionalClasses": [],
+                  "conditionalStyles": [],
+                  "contentType": "text",
+                  "displayExpression": "",
+                  "events": {},
+                  "iterate": {
+                    "array": "",
+                    "variable": "",
+                    "trackByIndex": false
+                  },
+                  "styles": [],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item"
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "nodeName": "text",
+                      "textContent": "country.name || 'Unknown'",
+                      "evaluate": true
+                    }
+                  ],
+                  "comments": ""
+                },
+                {
+                  "name": "div",
+                  "nodeName": "div",
+                  "elementId": "",
+                  "attributes": [
+                    {
+                      "property": "data-id",
+                      "value": "N4dAR4"
+                    }
+                  ],
+                  "classList": [
+                    "text-gray-600"
+                  ],
+                  "conditionalClasses": [],
+                  "conditionalStyles": [],
+                  "contentType": "text",
+                  "displayExpression": "",
+                  "events": {},
+                  "iterate": {
+                    "array": "",
+                    "variable": "",
+                    "trackByIndex": false
+                  },
+                  "styles": [],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item"
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "nodeName": "text",
+                      "textContent": "'Native: ' + (country.native || 'N/A')",
+                      "evaluate": true
+                    }
+                  ],
+                  "comments": ""
+                },
+                {
+                  "name": "div",
+                  "nodeName": "div",
+                  "elementId": "",
+                  "attributes": [
+                    {
+                      "property": "data-id",
+                      "value": "tP9tEk"
+                    }
+                  ],
+                  "classList": [
+                    "text-gray-600"
+                  ],
+                  "conditionalClasses": [],
+                  "conditionalStyles": [],
+                  "contentType": "text",
+                  "displayExpression": "",
+                  "events": {},
+                  "iterate": {
+                    "array": "",
+                    "variable": "",
+                    "trackByIndex": false
+                  },
+                  "styles": [],
+                  "layout": {
+                    "cell": {
+                      "type": "box-item"
+                    }
+                  },
+                  "children": [
+                    {
+                      "name": "text",
+                      "nodeName": "text",
+                      "textContent": "'Capital: ' + (country.capital || 'N/A')",
+                      "evaluate": true
+                    }
+                  ],
+                  "comments": ""
+                }
+              ],
+              "comments": ""
+            }
+          ],
+          "comments": ""
+        }
+      ],
+      "comments": ""
+    }
+  ],
+  "parentDirectoryId": "AHWEa_AtWO5uohoAg_ee2"
+}

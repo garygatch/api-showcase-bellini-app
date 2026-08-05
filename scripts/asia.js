@@ -1,0 +1,1 @@
+console.log("Asia page styles and scripts are ready to be used!");

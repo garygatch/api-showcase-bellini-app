@@ -1,0 +1,28 @@
+fancy-results {
+  display: block;
+}
+
+.fancy-container {
+  padding: 1rem;
+  background-color: #f0fdf4;
+  border-radius: 8px;
+  border: 2px solid #22c55e;
+}
+
+.fancy-item {
+  font-weight: bold;
+  padding: 8px;
+  margin-bottom: 4px;
+  background: white;
+  border-radius: 4px;
+  animation: slideIn 0.5s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

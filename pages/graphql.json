@@ -1,0 +1,461 @@
+{
+  "name": "graphql",
+  "type": "page",
+  "url": "/graphql",
+  "params": {},
+  "variables": [
+    {
+      "name": "$state",
+      "type": "service"
+    },
+    {
+      "name": "countriesApi",
+      "type": "graphql-api",
+      "id": "graphql-api"
+    },
+    {
+      "name": "allItems",
+      "description": "",
+      "type": "property",
+      "value": "[]"
+    },
+    {
+      "name": "isLoading",
+      "description": "",
+      "type": "property",
+      "value": "false"
+    },
+    {
+      "name": "errorMessage",
+      "description": "",
+      "type": "property",
+      "value": "null"
+    },
+    {
+      "name": "goHome",
+      "description": "",
+      "type": "method",
+      "body": "$ctrl.$state.go('home');",
+      "invokeOnLoad": false,
+      "isAsync": false,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    },
+    {
+      "name": "loadItems",
+      "description": "",
+      "type": "method",
+      "body": "$ctrl.isLoading = true;\n$ctrl.errorMessage = null;\ntry {\n  const items = await $ctrl.countriesApi.query.countries({}, { code: true, name: true, emoji: true });\n  $ctrl.allItems = items || [];\n} catch (err) {\n  $ctrl.errorMessage = (err && err.message) || 'Failed to load countries.';\n} finally {\n  $ctrl.isLoading = false;\n}",
+      "invokeOnLoad": true,
+      "isAsync": true,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    }
+  ],
+  "children": [
+    {
+      "name": "div",
+      "nodeName": "div",
+      "elementId": "",
+      "attributes": [
+        {
+          "property": "data-id",
+          "value": "gYOs36"
+        }
+      ],
+      "classList": [],
+      "conditionalClasses": [],
+      "conditionalStyles": [],
+      "contentType": "text",
+      "displayExpression": "",
+      "events": {},
+      "iterate": {
+        "array": "",
+        "variable": "",
+        "trackByIndex": false
+      },
+      "styles": [
+        {
+          "property": "padding",
+          "value": "2rem",
+          "enabled": true
+        }
+      ],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column",
+          "gap": "1rem",
+          "crossAxisAlignment": "stretch"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "rHP_O2"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            },
+            "container": {
+              "type": "box",
+              "orientation": "row",
+              "gap": "1rem",
+              "crossAxisAlignment": "center",
+              "mainAxisAlignment": "flex-start"
+            }
+          },
+          "children": [
+            {
+              "name": "Button",
+              "nodeName": "bln-button",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                },
+                {
+                  "property": "data-id",
+                  "value": "8dqR13"
+                }
+              ],
+              "classList": [],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [],
+              "comments": "",
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "'Back to Home'",
+                  "to": "label"
+                },
+                {
+                  "expression": "'primary'",
+                  "to": "type"
+                },
+                {
+                  "expression": "$ctrl.goHome()",
+                  "to": "onClick"
+                },
+                {
+                  "expression": "({'type': 'font-icon', 'style': 'solid', 'name': 'arrow-left', 'position': 'left'})",
+                  "to": "icon"
+                }
+              ]
+            },
+            {
+              "name": "h1",
+              "nodeName": "h1",
+              "elementId": "",
+              "attributes": [
+                {
+                  "property": "data-id",
+                  "value": "ZJcav6"
+                }
+              ],
+              "classList": [
+                "text-2xl",
+                "font-bold"
+              ],
+              "conditionalClasses": [],
+              "conditionalStyles": [],
+              "contentType": "text",
+              "displayExpression": "",
+              "events": {},
+              "iterate": {
+                "array": "",
+                "variable": "",
+                "trackByIndex": false
+              },
+              "styles": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 1,
+                  "shrinkFactor": 1,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "nodeName": "text",
+                  "textContent": "Countries (GraphQL)",
+                  "evaluate": false
+                }
+              ],
+              "comments": ""
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "7_d3vs"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "$ctrl.isLoading",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [
+            {
+              "property": "padding",
+              "value": "32px",
+              "enabled": true
+            },
+            {
+              "property": "text-align",
+              "value": "center",
+              "enabled": true
+            },
+            {
+              "property": "color",
+              "value": "#6b7280",
+              "enabled": true
+            }
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "nodeName": "text",
+              "textContent": "Loading countries...",
+              "evaluate": false
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "v46ORZ"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "!$ctrl.isLoading && $ctrl.errorMessage",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [
+            {
+              "property": "padding",
+              "value": "16px",
+              "enabled": true
+            },
+            {
+              "property": "border-radius",
+              "value": "8px",
+              "enabled": true
+            },
+            {
+              "property": "background",
+              "value": "#fef2f2",
+              "enabled": true
+            },
+            {
+              "property": "color",
+              "value": "#b91c1c",
+              "enabled": true
+            }
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "nodeName": "text",
+              "textContent": "$ctrl.errorMessage",
+              "evaluate": true
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "div",
+          "nodeName": "div",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "data-id",
+              "value": "l00SyW"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "!$ctrl.isLoading && !$ctrl.errorMessage && $ctrl.allItems.length === 0",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [
+            {
+              "property": "padding",
+              "value": "32px",
+              "enabled": true
+            },
+            {
+              "property": "text-align",
+              "value": "center",
+              "enabled": true
+            },
+            {
+              "property": "color",
+              "value": "#6b7280",
+              "enabled": true
+            }
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [
+            {
+              "name": "text",
+              "nodeName": "text",
+              "textContent": "No countries found.",
+              "evaluate": false
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "name": "Table",
+          "nodeName": "bln-table",
+          "elementId": "",
+          "attributes": [
+            {
+              "property": "core",
+              "value": ""
+            },
+            {
+              "property": "data-id",
+              "value": "X_YxyP"
+            }
+          ],
+          "classList": [],
+          "conditionalClasses": [],
+          "conditionalStyles": [],
+          "contentType": "text",
+          "displayExpression": "!$ctrl.isLoading && !$ctrl.errorMessage && $ctrl.allItems.length > 0",
+          "events": {},
+          "iterate": {
+            "array": "",
+            "variable": "",
+            "trackByIndex": false
+          },
+          "styles": [],
+          "layout": {
+            "cell": {
+              "type": "box-item"
+            }
+          },
+          "children": [],
+          "comments": "",
+          "type": "core-component",
+          "expressions": [
+            {
+              "expression": "$ctrl.allItems",
+              "to": "data"
+            },
+            {
+              "expression": "true",
+              "to": "enablePagination"
+            },
+            {
+              "expression": "20",
+              "to": "pageSize"
+            },
+            {
+              "expression": "false",
+              "to": "enableRowSelection"
+            },
+            {
+              "expression": "[{name: 'Emoji', hide: false, valueKey: 'emoji', width: '80', textAlign: 'center', headerTextAlign: 'center', enableSorting: false, enableFiltering: false, enablePinning: false, type: 'string', cellTooltip: '', cellConditionalStyle: [], cellActions: [], classes: [], conditionalClasses: []}, {name: 'Code', hide: false, valueKey: 'code', width: '120', textAlign: 'left', headerTextAlign: 'left', enableSorting: true, enableFiltering: false, enablePinning: false, type: 'string', cellTooltip: '', cellConditionalStyle: [], cellActions: [], classes: [], conditionalClasses: []}, {name: 'Name', hide: false, valueKey: 'name', width: '180', textAlign: 'left', headerTextAlign: 'left', enableSorting: true, enableFiltering: false, enablePinning: false, type: 'string', cellTooltip: '', cellConditionalStyle: [], cellActions: [], classes: [], conditionalClasses: []}]",
+              "to": "columns"
+            }
+          ]
+        }
+      ],
+      "comments": ""
+    }
+  ]
+}
